@@ -9,7 +9,7 @@ public class AuthGradeMain2 {
         Menu[] menuLst = Menu.values();
         Scanner sc = new Scanner(System.in);
         System.out.print("당신의 등급을 입력하세요" + Arrays.toString(grades) + ": ");
-        
+
         String input = sc.nextLine();
         AuthGrade grade = AuthGrade.valueOf(input.toUpperCase()); //toUpperCase 써서 대소문자 구분없이 받을 수 있도록
         System.out.println("당신의 등급은 " + grade.getDescription() + "입니다.");
