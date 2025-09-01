@@ -2,7 +2,7 @@ package nested.anonymous.ex;
 
 import java.util.Random;
 
-public class Ex1RefMain {
+public class Ex1RefMainV5 {
 
     public static void hello(Process process) {
         System.out.println("프로그램 시작");
@@ -14,31 +14,18 @@ public class Ex1RefMain {
         System.out.println("프로그램 종료");
     }
 
-    static class Dice implements Process {
+    public static void main(String[] args) {
 
-        @Override
-        public void run() {
+        hello(() -> {
             int randomValue = new Random().nextInt(6) + 1;
             System.out.println("주사위 = " + randomValue);
-        }
-    }
+        });
 
-    static class Sum implements Process {
-
-        @Override
-        public void run() {
+        hello(() -> {
             for (int i = 0; i < 3; i++) {
                 System.out.println("i = " + i);
             }
-        }
-    }
-
-    public static void main(String[] args) {
-        Process dice = new Dice();
-        Process sum = new Sum();
-
-        hello(dice);
-        hello(sum);
+        });
     }
 
 
